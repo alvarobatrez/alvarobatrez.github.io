@@ -14,6 +14,8 @@ const SITE = {
   github: "https://github.com/alvarobatrez",
   scholar: "",          // Google Scholar URL, e.g. "https://scholar.google.com/citations?user=..."
   orcid: "",            // e.g. "https://orcid.org/0000-0000-0000-0000"
+  // Shown on the home page under Overview. Update freely.
+  focus: "Reading on fault-tolerant robot learning and trustworthy AI; setting up the research workflow and tooling.",
 };
 
 /* ---- Research log: free-form notes and milestones only.

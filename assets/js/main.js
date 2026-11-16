@@ -253,6 +253,31 @@
         empty: "No activity logged yet.",
       });
     }
+
+    /* ---------- home overview: live stats + current focus ---------- */
+    const statsEl = document.querySelector("[data-render='stats']");
+    if (statsEl) {
+      const stats = [
+        { n: activity.length, label: "log entries" },
+        { n: typeof READING !== "undefined" ? READING.length : 0, label: "papers read" },
+        { n: typeof PUBLICATIONS !== "undefined" ? PUBLICATIONS.length : 0, label: "publications" },
+        { n: typeof TALKS !== "undefined" ? TALKS.length : 0, label: "talks" },
+        { n: typeof SIMULATIONS !== "undefined" ? SIMULATIONS.length : 0, label: "experiments" },
+      ];
+      statsEl.innerHTML = stats
+        .map(
+          (s) => `
+        <div class="stat">
+          <span class="stat-n">${s.n}</span>
+          <span class="stat-label">${s.label}</span>
+        </div>`
+        )
+        .join("");
+    }
+    const focusEl = document.querySelector("[data-render='focus']");
+    if (focusEl && typeof SITE !== "undefined" && SITE.focus) {
+      focusEl.innerHTML = `<span class="focus-label">Current focus</span><p>${esc(SITE.focus)}</p>`;
+    }
     const pubsEl = document.querySelector("[data-render='publications']");
     if (pubsEl && typeof PUBLICATIONS !== "undefined") {
       renderEntryList(pubsEl, PUBLICATIONS, { yearMarkers: true, empty: "No publications yet — work in progress." });

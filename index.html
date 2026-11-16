@@ -26,28 +26,46 @@
   </header>
 
   <main>
-    <section class="hero">
-      <canvas class="hero-canvas" aria-hidden="true"></canvas>
-      <div class="container">
-        <p class="hero-kicker">Doctoral Research · Trustworthy &amp; General AI</p>
-        <h1 class="hero-name">Álvaro Bátrez</h1>
-        <p class="hero-role">
-          Doctoral student · Trustworthy and General Artificial Intelligence Laboratory,
-          Westlake University · Supervisor: Prof. Yaochu Jin
-        </p>
-        <p class="hero-sub">
-          This site documents my doctoral work: papers read, experiments and simulations,
-          talks, and publications.
-        </p>
-        <div class="hero-meta">
-          <div><strong>Affiliation</strong>TGAI Lab, Westlake University</div>
-          <div><strong>Supervisor</strong>Prof. Yaochu Jin</div>
-          <div><strong>Status</strong>Doctoral student (PhD)</div>
-          <div><strong>Contact</strong><a href="mailto:batrezdelapazalvarooctavio@westlake.edu.cn">batrezdelapazalvarooctavio@westlake.edu.cn</a></div>
+    <!-- Identity strip -->
+    <section class="identity">
+      <div class="container identity-inner">
+        <div>
+          <h1 class="identity-name">Álvaro Bátrez</h1>
+          <p class="identity-line">
+            Doctoral student — Trustworthy and General Artificial Intelligence Laboratory, Westlake University
+          </p>
+          <p class="identity-line dim">
+            Supervisor: Prof. Yaochu Jin ·
+            <a href="mailto:batrezdelapazalvarooctavio@westlake.edu.cn">batrezdelapazalvarooctavio@westlake.edu.cn</a>
+          </p>
+        </div>
+        <div class="identity-tag">
+          <span class="tag" data-kind="active">PhD in progress</span>
         </div>
       </div>
     </section>
 
+    <!-- Overview: stats + current focus -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal"><h2>Overview</h2></div>
+        <div class="stat-grid reveal" data-render="stats"></div>
+        <div class="focus reveal" data-render="focus"></div>
+      </div>
+    </section>
+
+    <!-- Latest activity -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Latest activity</h2>
+          <a class="more-link" href="log.html">Full research log</a>
+        </div>
+        <ul class="entry-list reveal" data-render="latest"></ul>
+      </div>
+    </section>
+
+    <!-- Research interests -->
     <section class="section">
       <div class="container">
         <div class="section-head reveal"><h2>Research interests</h2></div>
@@ -68,16 +86,6 @@
             <p>Computational experiments as a research instrument: building controlled environments where hypotheses about intelligent behaviour can be tested and measured.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2>Latest activity</h2>
-          <a class="more-link" href="log.html">Full research log</a>
-        </div>
-        <ul class="entry-list reveal" data-render="latest"></ul>
       </div>
     </section>
   </main>

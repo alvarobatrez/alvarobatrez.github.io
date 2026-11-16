@@ -189,6 +189,86 @@ main { flex: 1; }
 .prose { max-width: 68ch; }
 .prose p + p { margin-top: 1rem; }
 
+/* ---------- identity strip (home) ---------- */
+.identity {
+  border-bottom: 1px solid var(--rule);
+  padding: 3rem 0 2.4rem;
+}
+.identity-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.identity-name {
+  font-family: var(--serif);
+  font-weight: 560;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  letter-spacing: -0.015em;
+}
+.identity-line {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  color: var(--accent-ink);
+  margin-top: 0.7rem;
+  max-width: 68ch;
+}
+.identity-line.dim { color: var(--ink-faint); margin-top: 0.35rem; }
+.identity-line a { overflow-wrap: anywhere; }
+.identity-tag { padding-top: 0.5rem; }
+
+/* ---------- overview: stats + focus ---------- */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.stat {
+  background: var(--paper-raised);
+  padding: 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.stat-n {
+  font-family: var(--mono);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--accent-ink);
+  line-height: 1;
+}
+.stat-label {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.focus {
+  margin-top: 1.5rem;
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--green-dim);
+  border-radius: 10px;
+  background: var(--paper-raised);
+  padding: 1.2rem 1.4rem;
+  max-width: 68ch;
+}
+.focus-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green-dim);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.focus p { color: var(--ink-soft); }
+
 /* ---------- research interests ---------- */
 .interests { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; }
 .interest .idx {
