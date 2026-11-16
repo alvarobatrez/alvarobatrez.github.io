@@ -54,16 +54,20 @@
             it.image.caption ? `<figcaption>${esc(it.image.caption)}</figcaption>` : ""
           }</figure>`
         : "";
+      const titleHTML = it.file
+        ? `<a href="paper.html?f=${encodeURIComponent(it.file)}">${esc(it.title)}</a>`
+        : esc(it.title);
       html += `
         <li class="entry" data-kind="${esc(it.kind || "")}">
           <span class="entry-date">${fmtDate(it.date)}</span>
           <div class="entry-body">
-            <h3>${esc(it.title)}</h3>
+            <h3>${titleHTML}</h3>
             ${venue}
             ${it.body ? `<p>${esc(it.body)}</p>` : ""}
             ${points}
             ${figure}
             ${linksHTML(it.links)}
+            ${it.file ? `<a class="more-link read-notes" href="paper.html?f=${encodeURIComponent(it.file)}">Read notes</a>` : ""}
             ${kindTag || tags ? `<div class="entry-tags">${kindTag}${tags}</div>` : ""}
           </div>
         </li>`;
