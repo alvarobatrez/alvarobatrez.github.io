@@ -239,6 +239,32 @@ main { flex: 1; }
 }
 .tag[data-kind] { color: var(--green); border-color: oklch(0.42 0.06 155); background: var(--green-soft); }
 
+/* ---------- reading entries: structured points + figures ---------- */
+.entry-points {
+  margin-top: 0.5rem;
+  padding-left: 1.15rem;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  max-width: 64ch;
+}
+.entry-points li + li { margin-top: 0.4rem; }
+.entry-points li::marker { color: var(--green-dim); }
+.entry-points strong { color: var(--ink); font-weight: 600; }
+.entry-figure { margin-top: 1rem; max-width: 42rem; }
+.entry-figure img {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--paper-raised);
+}
+.entry-figure figcaption {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  margin-top: 0.45rem;
+}
+
 /* ---------- filter bar ---------- */
 .filter-bar {
   display: flex;

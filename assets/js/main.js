@@ -44,6 +44,16 @@
       const kindTag = it.kind ? `<span class="tag" data-kind="${esc(it.kind)}">${esc(it.kind)}</span>` : "";
       const tags = (it.tags || []).map((t) => `<span class="tag">${esc(t)}</span>`).join("");
       const venue = it.venue ? `<p><em>${esc(it.venue)}</em>${it.authors ? " — " + esc(it.authors) : ""}</p>` : "";
+      const points = it.points
+        ? `<ul class="entry-points">${it.points
+            .map((pt) => `<li><strong>${esc(pt.label)}:</strong> ${esc(pt.text)}</li>`)
+            .join("")}</ul>`
+        : "";
+      const figure = it.image
+        ? `<figure class="entry-figure"><img src="${esc(it.image.src)}" alt="${esc(it.image.caption || it.title)}" loading="lazy" />${
+            it.image.caption ? `<figcaption>${esc(it.image.caption)}</figcaption>` : ""
+          }</figure>`
+        : "";
       html += `
         <li class="entry" data-kind="${esc(it.kind || "")}">
           <span class="entry-date">${fmtDate(it.date)}</span>
@@ -51,6 +61,8 @@
             <h3>${esc(it.title)}</h3>
             ${venue}
             ${it.body ? `<p>${esc(it.body)}</p>` : ""}
+            ${points}
+            ${figure}
             ${linksHTML(it.links)}
             ${kindTag || tags ? `<div class="entry-tags">${kindTag}${tags}</div>` : ""}
           </div>
