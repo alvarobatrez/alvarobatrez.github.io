@@ -20,16 +20,7 @@ const SITE = {
    Reading, talks, publications and simulations appear in the log
    AUTOMATICALLY from their own arrays below — do not duplicate them here.
    kind: "milestone" | "note" (or leave your own; it becomes a filter) */
-const LOG = [
-  {
-    date: "2026-11-16",
-    kind: "milestone",
-    title: "Research site goes online",
-    tags: ["meta"],
-    body: "Set up this site as a living record of the doctoral work: readings, experiments, simulations, talks and publications. Everything from here on gets logged as it happens.",
-    links: [],
-  },
-];
+const LOG = [];
 
 /* ---- Publications ---- */
 const PUBLICATIONS = [
