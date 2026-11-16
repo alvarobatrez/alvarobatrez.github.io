@@ -191,20 +191,37 @@
     }
   }
 
+  /* ---------- combined activity feed: everything, tagged by kind ---------- */
+  function allActivity() {
+    const items = [];
+    const push = (arr, kind) => {
+      if (typeof arr !== "undefined") {
+        arr.forEach((it) => items.push(Object.assign({}, it, { kind: it.kind || kind })));
+      }
+    };
+    push(typeof LOG !== "undefined" ? LOG : [], "note");
+    push(typeof READING !== "undefined" ? READING : [], "reading");
+    push(typeof TALKS !== "undefined" ? TALKS : [], "talk");
+    push(typeof PUBLICATIONS !== "undefined" ? PUBLICATIONS : [], "publication");
+    push(typeof SIMULATIONS !== "undefined" ? SIMULATIONS : [], "simulation");
+    return items;
+  }
+
   /* ---------- page mounts ---------- */
   document.addEventListener("DOMContentLoaded", () => {
     initReveal();
     initHeroCanvas();
 
+    const activity = allActivity();
     const logEl = document.querySelector("[data-render='log']");
-    if (logEl && typeof LOG !== "undefined") {
+    if (logEl) {
       const opts = { yearMarkers: true, empty: "The log is empty — the first entry is being written." };
-      renderEntryList(logEl, LOG, opts);
-      initFilter(logEl, LOG, opts);
+      renderEntryList(logEl, activity, opts);
+      initFilter(logEl, activity, opts);
     }
     const latestEl = document.querySelector("[data-render='latest']");
-    if (latestEl && typeof LOG !== "undefined") {
-      renderEntryList(latestEl, LOG.slice().sort(byDateDesc).slice(0, 3), {
+    if (latestEl) {
+      renderEntryList(latestEl, activity.slice().sort(byDateDesc).slice(0, 3), {
         empty: "No activity logged yet.",
       });
     }

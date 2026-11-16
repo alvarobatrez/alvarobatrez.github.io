@@ -16,8 +16,10 @@ const SITE = {
   orcid: "",            // e.g. "https://orcid.org/0000-0000-0000-0000"
 };
 
-/* ---- Research log: diary-style entries, newest first.
-   kind: "milestone" | "experiment" | "simulation" | "note" | "reading" | "talk" | "conference" | "publication" */
+/* ---- Research log: free-form notes and milestones only.
+   Reading, talks, publications and simulations appear in the log
+   AUTOMATICALLY from their own arrays below — do not duplicate them here.
+   kind: "milestone" | "note" (or leave your own; it becomes a filter) */
 const LOG = [
   {
     date: "2026-11-16",
