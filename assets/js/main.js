@@ -151,7 +151,7 @@
     }
     function draw() {
       ctx.clearRect(0, 0, w, h);
-      ctx.strokeStyle = "rgba(140, 75, 55, 0.16)";
+      ctx.strokeStyle = "rgba(103, 232, 249, 0.20)";
       ctx.lineWidth = devicePixelRatio;
       for (let i = 0; i < N; i++) {
         for (let j = i + 1; j < N; j++) {
@@ -167,7 +167,7 @@
         }
       }
       ctx.globalAlpha = 1;
-      ctx.fillStyle = "rgba(140, 75, 55, 0.4)";
+      ctx.fillStyle = "rgba(74, 222, 128, 0.55)";
       nodes.forEach((n) => {
         ctx.beginPath();
         ctx.arc(n.x, n.y, 1.6 * devicePixelRatio, 0, Math.PI * 2);

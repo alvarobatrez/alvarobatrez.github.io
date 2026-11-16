@@ -7,10 +7,10 @@
    ============================================================ */
 
 const SITE = {
-  name: "Álvaro Batrez",
+  name: "Álvaro Bátrez",
   affiliation: "Trustworthy and General Artificial Intelligence Laboratory",
   university: "Westlake University",
-  email: "batrez@westlake.edu.cn",
+  email: "batrezdelapazalvarooctavio@westlake.edu.cn",
   github: "https://github.com/alvarobatrez",
   scholar: "",          // Google Scholar URL, e.g. "https://scholar.google.com/citations?user=..."
   orcid: "",            // e.g. "https://orcid.org/0000-0000-0000-0000"
