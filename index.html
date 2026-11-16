@@ -1,20 +1,95 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mi página personal</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Álvaro Batrez — Doctoral Research</title>
+  <meta name="description" content="Research log and academic portfolio of Álvaro Batrez, doctoral researcher at the Trustworthy and General Artificial Intelligence Laboratory, Westlake University." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">álvaro batrez <span>/ research</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="log.html">Research Log</a>
+        <a href="publications.html">Publications</a>
+        <a href="reading.html">Reading</a>
+        <a href="talks.html">Talks</a>
+        <a href="simulations.html">Simulations</a>
+      </nav>
+    </div>
+  </header>
+
   <main>
-    <h1>Hola, soy [tu nombre]</h1>
-    <p>Bienvenido a mi página personal.</p>
+    <section class="hero">
+      <canvas class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="container">
+        <p class="hero-kicker">Doctoral Research · Trustworthy &amp; General AI</p>
+        <h1>Notes, experiments and results from a <em>PhD in progress</em>.</h1>
+        <p class="hero-sub">
+          I am a doctoral researcher at the
+          <strong>Trustworthy and General Artificial Intelligence Laboratory</strong>,
+          <strong>Westlake University</strong>. This site is my working record: what I read,
+          what I build, what I simulate, and what I conclude — kept current as the research moves.
+        </p>
+        <div class="hero-meta">
+          <div><strong>Affiliation</strong>TGAI Lab, Westlake University</div>
+          <div><strong>Status</strong>Doctoral researcher</div>
+          <div><strong>Contact</strong><a href="mailto:batrez@westlake.edu.cn">batrez@westlake.edu.cn</a></div>
+        </div>
+      </div>
+    </section>
 
-    <h2>Sobre mí</h2>
-    <p>Escribe aquí una breve presentación.</p>
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal"><h2>Research interests</h2></div>
+        <div class="interests">
+          <div class="interest reveal">
+            <span class="idx">01</span>
+            <h3>Trustworthy AI</h3>
+            <p>Robustness, reliability and safety of learning systems — understanding when and why models fail, and how to make failure modes visible before deployment.</p>
+          </div>
+          <div class="interest reveal">
+            <span class="idx">02</span>
+            <h3>General artificial intelligence</h3>
+            <p>Toward systems that transfer and reason beyond their training distribution; the architectures, objectives and evaluation methods that get us closer.</p>
+          </div>
+          <div class="interest reveal">
+            <span class="idx">03</span>
+            <h3>Simulation &amp; experimentation</h3>
+            <p>Computational experiments as a research instrument: building controlled environments where hypotheses about intelligent behaviour can be tested and measured.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <h2>Contacto</h2>
-    <p>Puedes contactarme en: tu-correo@ejemplo.com</p>
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Latest activity</h2>
+          <a class="more-link" href="log.html">Full research log</a>
+        </div>
+        <ul class="entry-list reveal" data-render="latest"></ul>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 Álvaro Batrez · TGAI Lab, Westlake University</p>
+      <div class="footer-links">
+        <a href="https://github.com/alvarobatrez" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:batrez@westlake.edu.cn">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
