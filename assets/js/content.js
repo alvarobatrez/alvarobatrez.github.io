@@ -14,8 +14,8 @@ const SITE = {
   github: "https://github.com/alvarobatrez",
   scholar: "",          // Google Scholar URL, e.g. "https://scholar.google.com/citations?user=..."
   orcid: "",            // e.g. "https://orcid.org/0000-0000-0000-0000"
-  // Shown on the home page under Overview. Update freely.
-  focus: "Reading on fault-tolerant robot learning and trustworthy AI; setting up the research workflow and tooling.",
+  // Shown on the home page in the "Current focus" tile. Update freely.
+  focus: "Running the literature review across the eight search domains of the thesis compass — from evolved plasticity rules to damage benchmarks — while setting up the research workflow and tooling.",
 };
 
 /* ---- Research log: free-form notes and milestones only.
@@ -39,7 +39,18 @@ const PUBLICATIONS = [
 /* ---- Reading: index of papers read.
    Each paper is its own Markdown file in reading/ — this array is just
    the index. To add a paper: create reading/<slug>.md, then add a line here.
-   Fields: date, title, authors, venue, file, tags, links. */
+   Fields: date, title, authors, venue, file, image, domains, links.
+
+   `domains` — the search domain(s) of the thesis compass the paper belongs to.
+   Always the FULL domain name (never the "D" id). The eight domains:
+     D1  Evolution of local plasticity rules / SNN architectures
+     D2  BTSP, three-factor rules, R-STDP
+     D3  Homeostasis and post-lesion cortical rewiring
+     D4  SNNs in continuous control and locomotion
+     D5  Structural damage and adaptation in legged robots
+     D6  Continual learning and forgetting metrics (embedded)
+     D7  Damage benchmarks in locomotion
+     D8  Modularity and topology in neural controllers */
 const READING = [
   {
     date: "2026-11-16",
@@ -48,7 +59,8 @@ const READING = [
     venue: "IEEE RA-L, Vol. 10, No. 7, July 2025",
     summary: "FT-CPG enables quadrupeds to survive and track commands under complex, mixed joint failures by decoupling healthy and fault-specific control via a gated CPG architecture.",
     file: "reading/ft-cpg-zhang-2025.md",
-    tags: ["fault tolerance", "quadruped locomotion", "CPG", "reinforcement learning"],
+    image: { src: "assets/img/ding2-3572772-large.gif", caption: "FT-CPG architecture overview" },
+    domains: ["Modularity and topology in neural controllers"],
     links: [{ label: "Paper (IEEE Xplore)", url: "https://ieeexplore.ieee.org/abstract/document/11012730" }],
   },
 ];
