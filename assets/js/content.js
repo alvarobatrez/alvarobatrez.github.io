@@ -52,10 +52,11 @@ const READING = [
     date: "2026-11-16",
     title: "FT-CPG: Learning Central Pattern Generators for Fault-Tolerant Quadruped Locomotion Under Multi-Joint Failures",
     authors: "Pei Zhang, Zhaobo Hua, Qiyu Qiu, and Jinliang Ding",
-    venue: "IEEE Robotics and Automation Letters (RA-L), Vol. 10, No. 7, July 2025",
+    venue: "IEEE RA-L, Vol. 10, No. 7, July 2025",
+    summary: "FT-CPG enables quadrupeds to survive and track commands under complex, mixed joint failures by decoupling healthy and fault-specific control via a gated CPG architecture.",
     file: "reading/ft-cpg-zhang-2025.md",
     tags: ["fault tolerance", "quadruped locomotion", "CPG", "reinforcement learning"],
-    links: [],
+    links: [{ label: "Paper (IEEE Xplore)", url: "https://ieeexplore.ieee.org/abstract/document/11012730" }],
   },
 ];
 

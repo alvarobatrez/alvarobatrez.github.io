@@ -1,6 +1,6 @@
 # FT-CPG: Learning Central Pattern Generators for Fault-Tolerant Quadruped Locomotion Under Multi-Joint Failures
 
-*Pei Zhang, Zhaobo Hua, Qiyu Qiu, and Jinliang Ding — IEEE Robotics and Automation Letters (RA-L), Vol. 10, No. 7, July 2025*
+*Pei Zhang, Zhaobo Hua, Qiyu Qiu, and Jinliang Ding — IEEE Robotics and Automation Letters (RA-L), Vol. 10, No. 7, July 2025* · [Paper on IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/11012730)
 
 ---
 
@@ -15,8 +15,6 @@
 - **Contributions:** Introduces a decomposition strategy separating healthy and faulty gait distributions to avoid "homogeneous" failure modes. Provides the first robust solution for multi-joint, mixed-fault tolerance with full omnidirectional command tracking without hand-tuned joint constraints or curriculum learning.
 
 - **Future Directions:** Develop unified policies for multi-leg failures (currently requires per-leg experts). Quantify real-world performance metrics (recovery time, fall rates) and test robustness against gradual/partial faults and discriminator misclassification.
-
-- **One-line takeaway:** FT-CPG enables quadrupeds to survive and track commands under complex, mixed joint failures by decoupling healthy and fault-specific control via a gated CPG architecture.
 
 <!-- To add an image: save the file in assets/img/ and uncomment the line below.
      The alt text becomes the figure caption. -->

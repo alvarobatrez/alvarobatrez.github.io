@@ -63,7 +63,7 @@
           <div class="entry-body">
             <h3>${titleHTML}</h3>
             ${venue}
-            ${it.body ? `<p>${esc(it.body)}</p>` : ""}
+            ${it.body ? `<p>${esc(it.body)}</p>` : it.summary ? `<p>${esc(it.summary)}</p>` : ""}
             ${points}
             ${figure}
             ${linksHTML(it.links)}
@@ -75,7 +75,7 @@
     el.innerHTML = html;
   }
 
-  /* ---------- card-grid renderer (simulations) ---------- */
+  /* ---------- card-grid renderer (readings, simulations) ---------- */
   function renderCardGrid(el, items, opts) {
     opts = opts || {};
     if (!items.length) {
@@ -84,15 +84,27 @@
     }
     items = items.slice().sort(byDateDesc);
     el.innerHTML = items
-      .map(
-        (it) => `
+      .map((it) => {
+        const title = it.file
+          ? `<a href="paper.html?f=${encodeURIComponent(it.file)}">${esc(it.title)}</a>`
+          : esc(it.title);
+        const venue = it.venue
+          ? `<p class="card-venue"><em>${esc(it.venue)}</em>${it.authors ? " · " + esc(it.authors) : ""}</p>`
+          : "";
+        const notes = it.file
+          ? `<a href="paper.html?f=${encodeURIComponent(it.file)}">Read notes →</a>`
+          : "";
+        const links = linksHTML(it.links);
+        const foot = notes || links ? `<div class="card-links">${notes}${linksHTML ? links.replace(/<\/?div[^>]*>/g, "") : ""}</div>` : "";
+        return `
       <article class="card">
         <span class="card-date">${fmtDate(it.date)}</span>
-        <h3>${esc(it.title)}</h3>
-        ${it.body ? `<p>${esc(it.body)}</p>` : ""}
-        ${linksHTML(it.links)}
-      </article>`
-      )
+        <h3>${title}</h3>
+        ${venue}
+        ${it.summary ? `<p>${esc(it.summary)}</p>` : it.body ? `<p>${esc(it.body)}</p>` : ""}
+        ${foot}
+      </article>`;
+      })
       .join("");
   }
 
@@ -247,7 +259,7 @@
     }
     const readEl = document.querySelector("[data-render='reading']");
     if (readEl && typeof READING !== "undefined") {
-      renderEntryList(readEl, READING, { yearMarkers: true, empty: "Reading notes will appear here." });
+      renderCardGrid(readEl, READING, { empty: "Reading notes will appear here." });
     }
     const talksEl = document.querySelector("[data-render='talks']");
     if (talksEl && typeof TALKS !== "undefined") {
