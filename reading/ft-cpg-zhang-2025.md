@@ -10,8 +10,6 @@
 
 - **Proposed Solution:** FT-CPG is a model-free RL framework using a biomimetic Central Pattern Generator (CPG). It employs section-wise training: a healthy policy $\pi^h$ generates nominal gaits, and a fault policy $\pi^f$ adjusts CPG parameters and adds bounded residual offsets $\Delta q \in [-0.5, 0.5]$ rad. A Transformer discriminator detects joint states from proprioception to gate $\pi^f$.
 
-![FT-CPG architecture overview](assets/img/ding2-3572772-large.gif)
-
 - **Evaluation:** In simulation (Unitree Go1), FT-CPG achieves 100% survival across all 27 single-leg fault states. It outperforms baselines in tracking accuracy, with a total average RMSE of 0.1758 versus 0.3893 for standard RL PD. Zero-shot sim-to-real transfer demonstrates distinct fault-tolerant gaits on hardware.
 
 - **Contributions:** Introduces a decomposition strategy separating healthy and faulty gait distributions to avoid "homogeneous" failure modes. Provides the first robust solution for multi-joint, mixed-fault tolerance with full omnidirectional command tracking without hand-tuned joint constraints or curriculum learning.
